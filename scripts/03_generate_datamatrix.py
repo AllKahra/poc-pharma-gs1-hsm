@@ -71,7 +71,7 @@ def main() -> int:
     print(f"[OK] Imagem gerada         -> {out_path}")
     print(f"[OK] Payload decodificado -> {decoded_out_path}")
     print(f"[OK] Tamanho payload      -> {len(payload)} bytes")
-    print(f"[OK] Tem GS?              -> {b'\\x1d' in payload}")
+    print(f"[OK] Tem GS?              -> {b'\x1d' in payload}")
 
     return 0
 
