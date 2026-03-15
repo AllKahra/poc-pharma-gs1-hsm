@@ -1,0 +1,58 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            3a:1b:28:03:c4:3d:99:a0:1f:b0:ce:90:57:51:5f:5f:e2:f8:a7:65
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=BR, ST=SP, O=PoC Pharma, CN=PoC Pharma Root CA
+        Validity
+            Not Before: Mar 15 19:32:22 2026 GMT
+            Not After : Mar 12 19:32:22 2036 GMT
+        Subject: C=BR, ST=SP, O=PoC Pharma, CN=PoC Pharma Root CA
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:e2:e6:77:4f:9f:75:ae:76:db:cc:28:4a:d3:47:
+                    b7:67:1b:55:e5:35:ed:20:21:06:d5:0a:0e:36:d7:
+                    bb:db:46:df:af:57:26:77:2a:25:ac:5c:bb:63:c6:
+                    08:75:42:c7:2a:a8:92:24:f0:35:db:8e:c5:ce:1b:
+                    cf:ed:ac:b4:8f:cd:fb:18:b2:5d:a7:d3:28:ad:0a:
+                    16:fe:a5:07:bf:71:41:9c:b9:1e:e8:f1:50:51:17:
+                    ec:1b:49:da:a4:28:26:c5:79:85:8a:81:55:dd:81:
+                    b7:96:d7:0c:da:a4:5c:45:5e:02:db:9f:c5:3e:67:
+                    af:1e:43:b4:81:fd:21:db:a4:d2:be:ef:d9:ca:21:
+                    c2:62:eb:3d:3f:1e:4f:a5:ee:ee:dd:b8:7e:a9:c2:
+                    0c:76:10:6c:da:41:8f:7f:72:13:37:8f:de:46:75:
+                    e1:75:83:4e:de:e1:10:8f:38:19:7e:3c:d7:b2:68:
+                    c2:e0:e3:90:69:89:b7:36:97:d6:42:86:3f:3a:a1:
+                    2e:6a:48:70:f1:20:47:fd:c8:08:fa:71:73:50:1e:
+                    79:78:89:56:1a:ac:b4:e8:49:64:e8:f0:a7:0b:8d:
+                    21:44:68:85:bb:aa:b7:5a:b7:87:eb:2a:16:56:09:
+                    0a:8a:ed:a8:e7:14:9c:b4:71:45:ec:58:34:6b:9b:
+                    b1:7b
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Key Usage: critical
+                Certificate Sign, CRL Sign
+            X509v3 Subject Key Identifier: 
+                5E:25:17:C4:B9:5A:E5:B5:C7:9B:11:0A:FF:7E:40:B5:67:1A:CE:BA
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        9e:27:f5:bf:c0:65:db:cd:2f:fb:ff:d5:53:a3:82:12:17:06:
+        d0:51:ee:ab:25:29:05:c1:00:3e:ea:b0:ed:70:6b:00:dd:93:
+        73:b0:4e:c7:2d:7d:52:c5:b6:c4:ef:3c:5f:82:81:03:2d:91:
+        72:16:e4:69:4a:85:dd:02:39:44:7e:a2:33:ce:90:62:f5:4e:
+        1f:f4:61:77:4f:d1:b5:44:3c:6c:dd:ab:4b:9c:c8:4e:72:77:
+        77:32:f6:11:86:12:3e:b7:90:ca:54:25:b9:d8:0e:81:f1:34:
+        66:93:12:00:57:6d:6c:41:de:e4:25:1e:cc:c8:c1:1c:ba:99:
+        d4:de:9b:12:15:74:93:29:78:d4:b7:5b:3b:27:59:87:94:35:
+        5b:6c:0e:a8:13:fc:7c:29:3e:6d:26:57:20:38:40:70:1d:47:
+        3e:71:a0:19:ba:8c:20:85:6b:92:cb:45:81:84:50:80:8c:81:
+        b5:2d:5b:d6:72:0b:b4:44:d8:4f:77:d7:83:c6:6c:00:3f:78:
+        4b:91:f7:3f:14:bf:88:a3:10:49:ef:4d:f8:e8:fd:6c:89:af:
+        9a:c6:be:9a:25:fe:8b:bd:60:ce:89:a8:58:03:dd:cd:8d:8e:
+        56:24:5c:3c:74:e5:00:28:90:bb:a2:7e:ee:84:41:82:10:b8:
+        42:98:b5:44

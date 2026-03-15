@@ -1,0 +1,24 @@
+Project state after PKI setup
+
+Completed:
+- Environment prepared
+- SoftHSM configured
+- CA token created
+- Manufacturer token created
+- CA key generated inside HSM
+- Manufacturer key generated inside HSM
+- PKCS#11 engine tested
+- Root CA created
+- Manufacturer certificate created
+- Certificate chain verified
+
+Critical files:
+- hsm/softhsm2.conf
+- pki/ca.crt
+- pki/mfg.crt
+- env.sh
+- start.sh
+
+HSM private key URIs:
+- pkcs11:token=CA-TOKEN;object=CAkey;type=private
+- pkcs11:token=MFG-TOKEN;object=MFGkey;type=private
