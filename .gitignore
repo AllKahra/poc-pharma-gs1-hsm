@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# SoftHSM tokens
+hsm/tokens/
+
+# dados gerados
+data/
+dm/
+
+# sistema
+.DS_Store
+Thumbs.db
