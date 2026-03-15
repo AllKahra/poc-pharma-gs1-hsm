@@ -1,0 +1,8 @@
+{
+  "25021f17b698d5ce": {
+    "cert_path": "/home/kali/poc-pharma-gs1-hsm/pki/mfg.crt",
+    "cert_sha256": "25021f17b698d5ce37e1a440d86da0fad3ac9278381dda7c1f940a3931543e0f",
+    "subject": "subject=C=BR, ST=SP, O=PoC Pharma, CN=PoC Pharma Manufacturer",
+    "issuer": "issuer=C=BR, ST=SP, O=PoC Pharma, CN=PoC Pharma Root CA"
+  }
+}
