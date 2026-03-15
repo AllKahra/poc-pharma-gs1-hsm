@@ -2,16 +2,13 @@
 
 echo "Starting project environment..."
 
-# entrar na pasta do projeto
-cd ~/poc-pharma-gs1-hsm
+cd ~/poc-pharma-gs1-hsm || exit 1
 
-# ativar ambiente python
 source .venv/bin/activate
-
-# carregar variáveis do projeto
 source env.sh
 
 echo "Environment ready."
 echo "Project directory: $(pwd)"
 echo "Python: $(which python)"
+echo "VIRTUAL_ENV: $VIRTUAL_ENV"
 echo "SoftHSM config: $SOFTHSM2_CONF"
