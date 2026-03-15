@@ -1,0 +1,10 @@
+Private Key Object; RSA 
+  label:      MFGkey
+  Usage:      decrypt, sign, signRecover, unwrap
+  Access:     sensitive, always sensitive, never extractable, local
+  uri:        pkcs11:model=SoftHSM%20v2;manufacturer=SoftHSM%20project;serial=d16e969934bbdddc;token=MFG-TOKEN;object=MFGkey;type=private
+Public Key Object; RSA 2048 bits
+  label:      MFGkey
+  Usage:      encrypt, verify, verifyRecover, wrap
+  Access:     local
+  uri:        pkcs11:model=SoftHSM%20v2;manufacturer=SoftHSM%20project;serial=d16e969934bbdddc;token=MFG-TOKEN;object=MFGkey;type=public

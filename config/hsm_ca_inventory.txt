@@ -1,0 +1,10 @@
+Public Key Object; RSA 2048 bits
+  label:      CAkey
+  Usage:      encrypt, verify, verifyRecover, wrap
+  Access:     local
+  uri:        pkcs11:model=SoftHSM%20v2;manufacturer=SoftHSM%20project;serial=5e3291ba304f1952;token=CA-TOKEN;object=CAkey;type=public
+Private Key Object; RSA 
+  label:      CAkey
+  Usage:      decrypt, sign, signRecover, unwrap
+  Access:     sensitive, always sensitive, never extractable, local
+  uri:        pkcs11:model=SoftHSM%20v2;manufacturer=SoftHSM%20project;serial=5e3291ba304f1952;token=CA-TOKEN;object=CAkey;type=private

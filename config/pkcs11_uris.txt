@@ -1,0 +1,7 @@
+# PKCS#11 URIs used in the project
+
+CA private key:
+pkcs11:token=CA-TOKEN;object=CAkey;type=private
+
+Manufacturer private key:
+pkcs11:token=MFG-TOKEN;object=MFGkey;type=private
