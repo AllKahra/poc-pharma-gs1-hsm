@@ -2,22 +2,29 @@
 .venv/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# SoftHSM
-hsm/tokens/
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
 
-# PKI gerada
-pki/*.key
-pki/*.crt
-pki/*.csr
-pki/*.srl
-pki/*.pem
-
-# artefatos gerados
-data/
-dm/
-registry/
-
-# sistema
+# Sistema
 .DS_Store
-Thumbs.db
+
+# Saídas geradas em execução
+data/*
+dm/*
+registry/*
+
+# Mantém a estrutura das pastas no repositório
+!data/.gitkeep
+!dm/.gitkeep
+!registry/.gitkeep
+
+# Nunca ignorar código, configuração e referências
+!scripts/
+!config/
+!reference/
