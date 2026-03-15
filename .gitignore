@@ -14,6 +14,9 @@ __pycache__/
 # Sistema
 .DS_Store
 
+# Tokens do SoftHSM não devem ir para o Git
+hsm/tokens/*
+
 # Saídas geradas em execução
 data/*
 dm/*
@@ -23,6 +26,10 @@ registry/*
 !data/.gitkeep
 !dm/.gitkeep
 !registry/.gitkeep
+
+# PKI: versiona apenas certificados finais úteis
+pki/*.csr
+pki/*.srl
 
 # Nunca ignorar código, configuração e referências
 !scripts/
