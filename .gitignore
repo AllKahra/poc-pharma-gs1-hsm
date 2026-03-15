@@ -3,12 +3,20 @@
 __pycache__/
 *.pyc
 
-# SoftHSM tokens
+# SoftHSM
 hsm/tokens/
 
-# dados gerados
+# PKI gerada
+pki/*.key
+pki/*.crt
+pki/*.csr
+pki/*.srl
+pki/*.pem
+
+# artefatos gerados
 data/
 dm/
+registry/
 
 # sistema
 .DS_Store
