@@ -1,35 +1,36 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
+
+cd "$(dirname "$0")"
 
 echo "Starting project environment..."
 
-cd ~/poc-pharma-gs1-hsm || exit 1
-
-# Carregar variáveis do projeto
-if [ -f env.sh ]; then
-    source env.sh
+if [[ -f env.sh ]]; then
+  # shellcheck disable=SC1091
+  source env.sh
 else
-    echo "Warning: env.sh not found"
+  echo "Warning: env.sh not found"
 fi
 
-# Ativar ambiente Python
-if [ -f .venv/bin/activate ]; then
-    source .venv/bin/activate
+if [[ -f .venv/bin/activate ]]; then
+  # shellcheck disable=SC1091
+  source .venv/bin/activate
 else
-    echo "Warning: virtual environment not found at .venv/bin/activate"
+  echo "Warning: virtual environment not found at .venv/bin/activate"
 fi
 
-echo ""
+echo
 echo "Environment ready."
 echo "Project directory: $(pwd)"
-echo "Python: $(which python)"
-echo "Virtualenv: $VIRTUAL_ENV"
-echo "SoftHSM config: $SOFTHSM2_CONF"
-echo "HSM module: $HSM_MODULE"
+echo "Python: $(command -v python || true)"
+echo "Virtualenv: ${VIRTUAL_ENV:-<none>}"
+echo "SoftHSM config: ${SOFTHSM2_CONF:-<unset>}"
+echo "HSM module: ${HSM_MODULE:-<unset>}"
 
-echo ""
+echo
 echo "Checking HSM slots..."
-softhsm2-util --show-slots
+softhsm2-util --show-slots || true
 
-echo ""
+echo
 echo "OpenSSL version: $(openssl version)"
-echo "pkcs11-tool: $(which pkcs11-tool)"
+echo "pkcs11-tool: $(command -v pkcs11-tool || true)"
