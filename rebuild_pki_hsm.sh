@@ -15,7 +15,7 @@ require_cmd() {
   }
 }
 
-log "Iniciando recriação de PKI + HSM"
+log "Iniciando recriação de PKI + HSM e geração do DataMatrix"
 
 require_cmd softhsm2-util
 require_cmd pkcs11-tool
@@ -60,6 +60,13 @@ log "Limpando tokens antigos"
 rm -rf hsm/tokens/*
 mkdir -p hsm/tokens
 ok "Diretório de tokens resetado"
+
+log "Limpando artefatos antigos da PKI e da geração"
+rm -f pki/ca.csr pki/ca.crt pki/ca.srl pki/mfg.csr pki/mfg.crt
+rm -f data/new_token_test.txt data/new_token_test.sig
+rm -f data/medicine.json data/gs1_base.txt data/gs1_hri.txt data/payload.txt data/payload_tampered.txt
+rm -f dm/medicine.png dm/tampered.png
+ok "Artefatos antigos removidos"
 
 log "Conferindo configuração do SoftHSM"
 echo "SOFTHSM2_CONF=$SOFTHSM2_CONF"
@@ -168,13 +175,31 @@ openssl dgst -sha256 \
 openssl dgst -sha256 \
   -verify <(openssl x509 -in pki/mfg.crt -pubkey -noout) \
   -signature data/new_token_test.sig data/new_token_test.txt
-
 ok "Teste manual de assinatura concluído"
 
+log "Gerando dados do medicamento"
+python scripts/01_generate_data.py \
+  --gtin 05412345000013 \
+  --lot L202401 \
+  --exp 2027-05-31 \
+  --serial ABC123456789
+ok "Dados do medicamento gerados"
+
+log "Assinando payload com PKCS#11"
+python scripts/02_sign_pkcs11.py
+ok "Payload assinado"
+
+log "Gerando imagem do DataMatrix"
+python scripts/03_generate_datamatrix.py
+ok "DataMatrix gerado"
+
 printf '\n'
-ok "PKI + HSM recriados com sucesso."
-echo "Agora você já pode rodar:"
-echo "  python scripts/01_generate_data.py --gtin 05412345000013 --lot L202401 --exp 2027-05-31 --serial ABC123456789"
-echo "  python scripts/02_sign_pkcs11.py"
-echo "  python scripts/03_generate_datamatrix.py"
+ok "Processo concluído com sucesso até a geração do DataMatrix."
+echo "Saídas principais:"
+echo "  - Certificado da CA     : pki/ca.crt"
+echo "  - Certificado do MFG    : pki/mfg.crt"
+echo "  - Payload assinado      : data/payload.txt"
+echo "  - Imagem DataMatrix     : dm/medicine.png"
+echo
+echo "Se quiser continuar depois, rode manualmente:"
 echo "  python scripts/04_verify_datamatrix.py dm/medicine.png --check-chain"
